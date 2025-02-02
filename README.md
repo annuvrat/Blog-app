@@ -50,12 +50,12 @@ This is the backend for a blog application built using Node.js and Express.js. I
 1. **Clone the repository**
    ```bash
    git clone https://github.com/annuvrat/Blog-app.git
-   cd blog-app-backend
+   cd Blog-app-backend
    ```
 
 2. **Install dependencies**
    ```bash
-   npm install
+   npm i
    ```
 
 3. **Environment Configuration**
