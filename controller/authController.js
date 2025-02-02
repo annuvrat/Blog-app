@@ -1,7 +1,7 @@
 import { authService } from '../services/servicesAuth.js';
 import { SuccessResponse } from '../helpers/successResponse.js';
 import { ErrorResponse } from '../helpers/errorResponse.js';
-
+import UserToken from '../models/UserToken.js';
 export const authController = {
     register: async (req, res, next) => {
         try {
@@ -16,13 +16,20 @@ export const authController = {
     login: async (req, res, next) => {
         try {
             const { email, password } = req.body;
-            const token = await authService.login(email, password);
+            const { accessToken, refreshToken } = await authService.login(email, password);
 
-            // Set the JWT in an HTTP-only cookie
-            res.cookie('access_token', token, {
+
+            res.cookie('access_token', accessToken, {
                 httpOnly: true,
                 secure: process.env.NODE_ENV === 'production',
-                maxAge: 3600000 // 1 hour
+                maxAge: 15 * 60 * 1000 // 15 minutes
+            });
+
+
+            res.cookie('refresh_token', refreshToken, {
+                httpOnly: true,
+                secure: process.env.NODE_ENV === 'production',
+                maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
             });
 
             return SuccessResponse.ok(res, null, 'Login successful');
@@ -31,9 +38,17 @@ export const authController = {
         }
     },
 
-    logout: (req, res) => {
+
+    logout: async (req, res) => {
+        const { refresh_token } = req.cookies;
+
+        if (refresh_token) {
+            await UserToken.deleteOne({ token: refresh_token });
+        }
+
         res.clearCookie('access_token');
+        res.clearCookie('refresh_token');
+
         return SuccessResponse.ok(res, null, 'Logout successful');
-        
     }
 };
