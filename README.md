@@ -31,7 +31,7 @@ This is the backend for a blog application built using Node.js and Express.js. I
 
 - **Node.js** - Runtime environment
 - **Express.js** - Web application framework
-- **MongoDB** - Database system
+- **MongoDB-Atlas** - Database system
 - **Mongoose** - MongoDB object modeling
 - **JWT** - Token-based authentication
 - **bcrypt** - Password hashing
@@ -49,7 +49,7 @@ This is the backend for a blog application built using Node.js and Express.js. I
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/blog-app-backend.git
+   git clone https://github.com/annuvrat/Blog-app.git
    cd blog-app-backend
    ```
 
@@ -69,14 +69,9 @@ This is the backend for a blog application built using Node.js and Express.js. I
 
 4. **Start the server**
    
-   For production:
-   ```bash
-   npm start
-   ```
-   
    For development:
    ```bash
-   npm run dev
+   npm start
    ```
 
 ## 📜 License
@@ -86,5 +81,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 <p align="center">
-  Made with ❤️ for the developer community
+  Made with ❤️ from Annuvrat
 </p>
