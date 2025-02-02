@@ -1,4 +1,4 @@
-Blog App Backend
+<h3>Blog App Backend<h3>
 
   
 
@@ -61,79 +61,6 @@ Start the server:
 
 npm start
 
-🔗 API Endpoints
-
-🔑 Auth Routes
-
-Method
-
-Endpoint
-
-Description
-
-POST
-
-/api/auth/register
-
-Register a new user
-
-POST
-
-/api/auth/login
-
-Login user and get token
-
-POST
-
-/api/auth/logout
-
-Logout user
-
-📝 Blog Routes
-
-Method
-
-Endpoint
-
-Description
-
-GET
-
-/api/blogs
-
-Get all blogs
-
-GET
-
-/api/blogs/:id
-
-Get a single blog by ID
-
-POST
-
-/api/blogs
-
-Create a new blog (Authenticated)
-
-PUT
-
-/api/blogs/:id
-
-Update a blog (Authenticated)
-
-DELETE
-
-/api/blogs/:id
-
-Delete a blog (Authenticated)
-
-🔐 Middleware
-
-authMiddleware.js: Protects routes and ensures only authenticated users can access certain endpoints.
-
-🚀 Running in Development Mode
-
-To start the backend in development mode with auto-reloading, use:
 
 npm run dev
 
