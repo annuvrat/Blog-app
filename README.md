@@ -1,4 +1,4 @@
-<h3>Blog App Backend<h3>
+<h3 align="center">BLOG BACKEND
 
   
 
