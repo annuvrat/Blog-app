@@ -22,7 +22,7 @@ export const authController = {
             res.cookie('access_token', accessToken, {
                 httpOnly: true,
                 secure: process.env.NODE_ENV,
-                maxAge: 15 * 60 * 1000 // 15 minutes
+                maxAge: 25 * 60 * 1000 // 25 minutes
             });
 
 
